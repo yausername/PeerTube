@@ -25,10 +25,10 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "accounts.yaml#/parameters/name"
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./accounts.yaml#/parameters/name"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -43,7 +43,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "accounts.yaml#/parameters/name"
+        - $ref: "./accounts.yaml#/parameters/name"
       responses:
         '200':
           description: successful operation
@@ -122,9 +122,9 @@ paths:
           required: true
           type: string
           description: 'The state of the job'
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -160,9 +160,9 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -179,9 +179,9 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -205,7 +205,7 @@ paths:
             $ref: '#/definitions/Follow'
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   /users:
     post:
       security:
@@ -238,9 +238,9 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -259,10 +259,10 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "users.yaml#/parameters/id"
+        - $ref: "./users.yaml#/parameters/id"
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
     get:
       security:
         - OAuth2: [ ]
@@ -273,7 +273,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "users.yaml#/parameters/id"
+        - $ref: "./users.yaml#/parameters/id"
       responses:
         '200':
           description: successful operation
@@ -289,7 +289,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "users.yaml#/parameters/id"
+        - $ref: "./users.yaml#/parameters/id"
         - in: body
           name: body
           required: true
@@ -297,7 +297,7 @@ paths:
             $ref: '#/definitions/UpdateUser'
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   /users/me:
     get:
       security:
@@ -332,7 +332,7 @@ paths:
             $ref: '#/definitions/UpdateMe'
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   /users/me/video-quota-used:
     get:
       security:
@@ -381,9 +381,9 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -407,7 +407,7 @@ paths:
             $ref: '#/definitions/RegisterUser'
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   /users/me/avatar/pick:
     post:
       security:
@@ -442,9 +442,9 @@ paths:
           required: false
           type: number
           description: category id of the video
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -523,21 +523,21 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
-        - $ref: "videos.yaml#/parameters/thumbnailfile"
-        - $ref: "videos.yaml#/parameters/previewfile"
-        - $ref: "videos.yaml#/parameters/category"
-        - $ref: "videos.yaml#/parameters/licence"
-        - $ref: "videos.yaml#/parameters/language"
-        - $ref: "videos.yaml#/parameters/description"
-        - $ref: "videos.yaml#/parameters/waitTranscoding"
-        - $ref: "videos.yaml#/parameters/support"
-        - $ref: "videos.yaml#/parameters/nsfw"
-        - $ref: "videos.yaml#/parameters/name"
-        - $ref: "videos.yaml#/parameters/tags"
-        - $ref: "videos.yaml#/parameters/commentsEnabled"
-        - $ref: "videos.yaml#/parameters/privacy"
-        - $ref: "videos.yaml#/parameters/scheduleUpdate"
+        - $ref: "./videos.yaml#/parameters/id"
+        - $ref: "./videos.yaml#/parameters/thumbnailfile"
+        - $ref: "./videos.yaml#/parameters/previewfile"
+        - $ref: "./videos.yaml#/parameters/category"
+        - $ref: "./videos.yaml#/parameters/licence"
+        - $ref: "./videos.yaml#/parameters/language"
+        - $ref: "./videos.yaml#/parameters/description"
+        - $ref: "./videos.yaml#/parameters/waitTranscoding"
+        - $ref: "./videos.yaml#/parameters/support"
+        - $ref: "./videos.yaml#/parameters/nsfw"
+        - $ref: "./videos.yaml#/parameters/name"
+        - $ref: "./videos.yaml#/parameters/tags"
+        - $ref: "./videos.yaml#/parameters/commentsEnabled"
+        - $ref: "./videos.yaml#/parameters/privacy"
+        - $ref: "./videos.yaml#/parameters/scheduleUpdate"
       responses:
         '200':
           description: successful operation
@@ -551,7 +551,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
+        - $ref: "./videos.yaml#/parameters/id"
       responses:
         '200':
           description: successful operation
@@ -567,10 +567,10 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
+        - $ref: "./videos.yaml#/parameters/id"
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   "/videos/{id}/description":
     get:
       tags:
@@ -580,7 +580,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
+        - $ref: "./videos.yaml#/parameters/id"
       responses:
         '200':
           description: successful operation
@@ -595,10 +595,10 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
+        - $ref: "./videos.yaml#/parameters/id"
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   /videos/upload:
     post:
       security:
@@ -620,20 +620,20 @@ paths:
           required: true
           type: number
           description: 'Channel id that will contain this video'
-        - $ref: "videos.yaml#/parameters/thumbnailfile"
-        - $ref: "videos.yaml#/parameters/previewfile"
-        - $ref: "videos.yaml#/parameters/category"
-        - $ref: "videos.yaml#/parameters/licence"
-        - $ref: "videos.yaml#/parameters/language"
-        - $ref: "videos.yaml#/parameters/description"
-        - $ref: "videos.yaml#/parameters/waitTranscoding"
-        - $ref: "videos.yaml#/parameters/support"
-        - $ref: "videos.yaml#/parameters/nsfw"
-        - $ref: "videos.yaml#/parameters/name"
-        - $ref: "videos.yaml#/parameters/tags"
-        - $ref: "videos.yaml#/parameters/commentsEnabled"
-        - $ref: "videos.yaml#/parameters/privacy"
-        - $ref: "videos.yaml#/parameters/scheduleUpdate"
+        - $ref: "./videos.yaml#/parameters/thumbnailfile"
+        - $ref: "./videos.yaml#/parameters/previewfile"
+        - $ref: "./videos.yaml#/parameters/category"
+        - $ref: "./videos.yaml#/parameters/licence"
+        - $ref: "./videos.yaml#/parameters/language"
+        - $ref: "./videos.yaml#/parameters/description"
+        - $ref: "./videos.yaml#/parameters/waitTranscoding"
+        - $ref: "./videos.yaml#/parameters/support"
+        - $ref: "./videos.yaml#/parameters/nsfw"
+        - $ref: "./videos.yaml#/parameters/name"
+        - $ref: "./videos.yaml#/parameters/tags"
+        - $ref: "./videos.yaml#/parameters/commentsEnabled"
+        - $ref: "./videos.yaml#/parameters/privacy"
+        - $ref: "./videos.yaml#/parameters/scheduleUpdate"
       responses:
         '200':
           description: successful operation
@@ -650,9 +650,9 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -671,10 +671,10 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
+        - $ref: "./videos.yaml#/parameters/id"
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   "/videos/{id}/blacklist":
     post:
       security:
@@ -686,10 +686,10 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
+        - $ref: "./videos.yaml#/parameters/id"
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
     delete:
       security:
         - OAuth2: [ ]
@@ -700,10 +700,10 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
+        - $ref: "./videos.yaml#/parameters/id"
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   /videos/blacklist:
     get:
       security:
@@ -715,9 +715,9 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -734,9 +734,9 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -760,7 +760,7 @@ paths:
             $ref: '#/definitions/VideoChannelInput'
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   "/video-channels/{id}":
     get:
       tags:
@@ -770,7 +770,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "video-channels.yaml#/parameters/id"
+        - $ref: "./video-channels.yaml#/parameters/id"
       responses:
         '200':
           description: successful operation
@@ -786,14 +786,14 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "video-channels.yaml#/parameters/id"
+        - $ref: "./video-channels.yaml#/parameters/id"
         - in: body
           name: body
           schema:
             $ref: '#/definitions/VideoChannelInput'
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
     delete:
       security:
         - OAuth2: [ ]
@@ -804,10 +804,10 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "video-channels.yaml#/parameters/id"
+        - $ref: "./video-channels.yaml#/parameters/id"
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   "/video-channels/{id}/videos":
     get:
       tags:
@@ -817,7 +817,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "video-channels.yaml#/parameters/id"
+        - $ref: "./video-channels.yaml#/parameters/id"
       responses:
         '200':
           description: successful operation
@@ -832,7 +832,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "accounts.yaml#/parameters/name"
+        - $ref: "./accounts.yaml#/parameters/name"
       responses:
         '200':
           description: successful operation
@@ -849,10 +849,10 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./videos.yaml#/parameters/id"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
       responses:
         '200':
           description: successful operation
@@ -868,7 +868,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
+        - $ref: "./videos.yaml#/parameters/id"
       responses:
         '200':
           description: successful operation
@@ -883,8 +883,8 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
-        - $ref: "video-comments.yaml#/parameters/threadId"
+        - $ref: "./videos.yaml#/parameters/id"
+        - $ref: "./video-comments.yaml#/parameters/threadId"
       responses:
         '200':
           description: successful operation
@@ -901,8 +901,8 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
-        - $ref: "video-comments.yaml#/parameters/commentId"
+        - $ref: "./videos.yaml#/parameters/id"
+        - $ref: "./video-comments.yaml#/parameters/commentId"
       responses:
         '200':
           description: successful operation
@@ -918,11 +918,11 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
-        - $ref: "video-comments.yaml#/parameters/commentId"
+        - $ref: "./videos.yaml#/parameters/id"
+        - $ref: "./video-comments.yaml#/parameters/commentId"
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   "/videos/{id}/rate":
     put:
       security:
@@ -934,10 +934,10 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "videos.yaml#/parameters/id"
+        - $ref: "./videos.yaml#/parameters/id"
       responses:
         '204':
-          $ref: "commons.yaml#/responses/emptySuccess"
+          $ref: "./commons.yaml#/responses/emptySuccess"
   /search/videos:
     get:
       tags:
@@ -947,9 +947,9 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "commons.yaml#/parameters/start"
-        - $ref: "commons.yaml#/parameters/count"
-        - $ref: "commons.yaml#/parameters/sort"
+        - $ref: "./commons.yaml#/parameters/start"
+        - $ref: "./commons.yaml#/parameters/count"
+        - $ref: "./commons.yaml#/parameters/sort"
         - name: search
           in: query
           required: true
